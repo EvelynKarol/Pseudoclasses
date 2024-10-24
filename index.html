@@ -1,64 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulário</title>
-        <link rel="stylesheet" href="style.css"> 
-    </head>
-        <header>
-            <h1>Assinatura</h1>
-            <nav>
-                <ul>
-                <a href="#home">Inicio</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#contato">Contato</a>
-                </ul>
-            </nav>
-        </header>
-    
-    <body>
-        <div class="container"></div>
-       <form action="#" method="post">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Assinatura</h1>
+        <nav>
+            <ul>
+                <a href="#p1">Inicio</a>
+                <a href="#p2">Sobre</a>
+                <a href="#p3">Contato</a>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nomeInput = document.getElementById('Nome');
+            const emailInput = document.getElementById('Email');
+            const enviar = document.querySelector('.enviar');
+
+            function toggleButtonState() {
+                // Verifica se os campos estão preenchidos
+                if (nomeInput.value.trim() !== '' && emailInput.value.trim() !== '') {
+                    enviar.removeAttribute('disabled');
+                } else {
+                    enviar.setAttribute('disabled', 'true');
+                }
+            }
+
+
+            nomeInput.addEventListener('input', toggleButtonState);
+            emailInput.addEventListener('input', toggleButtonState);
+        });
+    </script>
+
+    <div class="container"></div>
+    <form action="#" method="post">
         <label for="Nome">Nome</label>
         <input type="text" name="Nome" id="Nome" placeholder="Digite seu nome" required>
+
         <label for="Email">Email</label>
-        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+        <input type="email" name="email" id="Email" placeholder="Digite seu email" required>
+
         <label class="checkbox-label">
-        <input type="checkbox" name="newsletter" id="newsletter" >Assinar newsletter</label>
-        <button type="submit"disabled>Enviar</button>
-        </form>
+            <input type="checkbox" name="newsletter" id="newsletter"> Assinar newsletter
+        </label>
+
+        <button class="enviar" type="submit" disabled>Enviar</button>
+    </form>
     </div>
     <div class="holder">
-    <div class="imagem">
-        <ul>
-            <a><img src="imagens/download.jpg"></a>
-        </ul>
-    </div>
-    <div class="imagem">
-        <ul>
-            <a><img src="imagens/download (1).jpg"></a>
-    </ul>
-    </div>
-    <div class="imagem">
-        <ul>
-            <a><img src="imagens/download (2).jpg"></a>
-        </ul>
+        <div class="imagem">
+            <ul>
+                <a><img src="imagens/download.jpg"></a>
+            </ul>
         </div>
         <div class="imagem">
             <ul>
-            <a><img src="imagens/download (3).jpg"></a>
-        </ul>
+                <a><img src="imagens/download (1).jpg"></a>
+            </ul>
+        </div>
+        <div class="imagem">
+            <ul>
+                <a><img src="imagens/download (2).jpg"></a>
+            </ul>
+        </div>
+        <div class="imagem">
+            <ul>
+                <a><img src="imagens/download (3).jpg"></a>
+            </ul>
+        </div>
     </div>
-</div>
-<h2>inicio</h2>
-<p1>Sobre a seção "inicio", nela você encontrará algumas seções de maneira que conheça nossa empresa e o que podemos oferecer.</p1>
-<h2>Sobre</h2>
-<p2>Sobre a seção "Sobre", nela você encontrará sobre como criamos nossa empresa, sobre o nosso conteúdo e o qual produto disponiblizamos para os usuários.</p2>
-<h2>Conato</h2>
-<p3>Sobre a seção "Contato", nela você encontrará algumas maneiras de como entrar em contato conosco em caso de dúvidas.
-</p3>
-      </body>
+    <div class="paragrafos">
+        <!-- <h2>inicio</h2> -->
+        <p id="p1">Sobre a seção "inicio", nela você encontrará algumas seções de maneira que conheça nossa empresa e o
+            que podemos oferecer.</p>
+        <!-- <h2>Sobre</h2> -->
+        <p id="p2">Sobre a seção "Sobre", nela você encontrará sobre como criamos nossa empresa, sobre o nosso conteúdo
+            e o qual produto disponiblizamos para os usuários.</p>
+        <!-- <h2>Conato</h2> -->
+        <p id="p3">Sobre a seção "Contato", nela você encontrará algumas maneiras de como entrar em contato conosco em
+            caso de dúvidas.
+        </p>
+    </div>
+    <button class="botao"
+        onclick="window.location.href='https://www.dimensaodanatureza.com/single-post/10-sites-incriveis-que-falam-sobre-natureza'">Saiba
+        mais</button>
+    <div class="importante">
+        <p class="important"> Muita informação e inspiração para ajudar você a buscar um estilo de vida mais consciente.
+            Continue lendo o texto para saber mais a respeito!(importante!) </p>
+        <p>Aos poucos as pessoas estão buscando ter um estilo mais saudável. E não poderia ser diferente, na era
+            digital.</p>
+    </div>
+</body>
 
 </html>
-
